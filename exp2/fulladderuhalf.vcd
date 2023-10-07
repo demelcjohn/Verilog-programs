@@ -1,0 +1,86 @@
+$date
+	Sat Jul 30 14:13:17 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fulladderuhalf_tb $end
+$var wire 1 ! S $end
+$var wire 1 " Cout $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % Cin $end
+$scope module c $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 % Cin $end
+$var wire 1 " Cout $end
+$var wire 1 & outS $end
+$var wire 1 ' outC $end
+$var wire 1 ( out2 $end
+$var wire 1 ! S $end
+$scope module ha1 $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 ' C $end
+$var wire 1 & S $end
+$upscope $end
+$scope module ha2 $end
+$var wire 1 & A $end
+$var wire 1 % B $end
+$var wire 1 ( C $end
+$var wire 1 ! S $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#2
+1!
+1%
+#4
+1&
+1!
+1$
+0%
+#6
+1"
+0!
+1(
+1%
+#8
+0"
+1!
+0(
+1#
+0$
+0%
+#10
+1"
+0!
+1(
+1%
+#12
+0&
+1'
+0!
+0(
+1$
+0%
+#14
+1!
+1%
+#16

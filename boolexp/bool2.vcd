@@ -1,0 +1,130 @@
+$date
+	Thu Jul 28 21:10:17 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bool2_tb $end
+$var wire 1 ! F $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$var reg 1 $ C $end
+$var reg 1 % D $end
+$scope module exp $end
+$var wire 1 " A $end
+$var wire 1 # B $end
+$var wire 1 & BDxnor $end
+$var wire 1 $ C $end
+$var wire 1 % D $end
+$var wire 1 ! F $end
+$var wire 1 ' not_A $end
+$var wire 1 ( not_C $end
+$var wire 1 ) out1 $end
+$var wire 1 * out2 $end
+$var wire 1 + out3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0+
+1*
+1)
+1(
+1'
+1&
+0%
+0$
+0#
+0"
+1!
+$end
+#2
+0&
+1%
+#4
+0(
+1&
+1$
+0%
+#6
+0!
+0*
+0)
+0&
+1%
+#8
+1!
+1*
+1)
+1(
+1#
+0$
+0%
+#10
+1&
+1%
+#12
+0!
+0*
+0)
+0(
+0&
+1$
+0%
+#14
+1!
+1*
+1)
+1&
+1%
+#16
+0!
+0*
+1(
+0'
+0%
+0$
+0#
+1"
+#18
+0&
+1%
+#20
+0(
+1&
+1$
+0%
+#22
+0)
+1!
+0&
+1+
+1%
+#24
+1)
+0!
+1(
+0+
+1#
+0$
+0%
+#26
+1&
+1%
+#28
+0)
+0(
+0&
+1$
+0%
+#30
+1)
+1!
+1&
+1+
+1%
+#32

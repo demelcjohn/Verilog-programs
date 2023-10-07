@@ -1,0 +1,131 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x559e8b4e2a70 .scope module, "bintogray_tb" "bintogray_tb" 2 1;
+ .timescale 0 0;
+v0x559e8b4fbf90_0 .var "B0", 0 0;
+v0x559e8b4fc050_0 .var "B1", 0 0;
+v0x559e8b4fc0f0_0 .var "B2", 0 0;
+v0x559e8b4fc1c0_0 .var "B3", 0 0;
+v0x559e8b4fc290_0 .net "G0", 0 0, L_0x559e8b4fc7f0;  1 drivers
+v0x559e8b4fc330_0 .net "G1", 0 0, L_0x559e8b4fc6e0;  1 drivers
+v0x559e8b4fc400_0 .net "G2", 0 0, L_0x559e8b4c08e0;  1 drivers
+v0x559e8b4fc4d0_0 .net "G3", 0 0, L_0x559e8b4c0870;  1 drivers
+S_0x559e8b4e2bf0 .scope module, "c" "bintogray" 2 6, 3 1 0, S_0x559e8b4e2a70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "B3"
+    .port_info 1 /INPUT 1 "B2"
+    .port_info 2 /INPUT 1 "B1"
+    .port_info 3 /INPUT 1 "B0"
+    .port_info 4 /OUTPUT 1 "G3"
+    .port_info 5 /OUTPUT 1 "G2"
+    .port_info 6 /OUTPUT 1 "G1"
+    .port_info 7 /OUTPUT 1 "G0"
+L_0x559e8b4c0870 .functor BUFZ 1, v0x559e8b4fc1c0_0, C4<0>, C4<0>, C4<0>;
+L_0x559e8b4c08e0 .functor XOR 1, v0x559e8b4fc1c0_0, v0x559e8b4fc0f0_0, C4<0>, C4<0>;
+L_0x559e8b4fc6e0 .functor XOR 1, v0x559e8b4fc050_0, v0x559e8b4fc0f0_0, C4<0>, C4<0>;
+L_0x559e8b4fc7f0 .functor XOR 1, v0x559e8b4fc050_0, v0x559e8b4fbf90_0, C4<0>, C4<0>;
+v0x559e8b4c0ae0_0 .net "B0", 0 0, v0x559e8b4fbf90_0;  1 drivers
+v0x559e8b4c0b80_0 .net "B1", 0 0, v0x559e8b4fc050_0;  1 drivers
+v0x559e8b4fb990_0 .net "B2", 0 0, v0x559e8b4fc0f0_0;  1 drivers
+v0x559e8b4fba30_0 .net "B3", 0 0, v0x559e8b4fc1c0_0;  1 drivers
+v0x559e8b4fbaf0_0 .net "G0", 0 0, L_0x559e8b4fc7f0;  alias, 1 drivers
+v0x559e8b4fbc00_0 .net "G1", 0 0, L_0x559e8b4fc6e0;  alias, 1 drivers
+v0x559e8b4fbcc0_0 .net "G2", 0 0, L_0x559e8b4c08e0;  alias, 1 drivers
+v0x559e8b4fbd80_0 .net "G3", 0 0, L_0x559e8b4c0870;  alias, 1 drivers
+    .scope S_0x559e8b4e2a70;
+T_0 ;
+    %vpi_call 2 11 "$display", "Full Adder" {0 0 0};
+    %vpi_call 2 13 "$dumpfile", "bintogray.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x559e8b4e2a70 {0 0 0};
+    %vpi_call 2 15 "$monitor", "B3 = %b | B2 = %b | B1 = %b | B0 = %b | G3 = %b | G2 = %b | G1 = %b | G0 = %b", v0x559e8b4fc1c0_0, v0x559e8b4fc0f0_0, v0x559e8b4fc050_0, v0x559e8b4fbf90_0, v0x559e8b4fc4d0_0, v0x559e8b4fc400_0, v0x559e8b4fc330_0, v0x559e8b4fc290_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc1c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc0f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc0f0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc1c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc0f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc0f0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fc050_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x559e8b4fbf90_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call 2 53 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "bintogray_tb.v";
+    "bintogray.v";

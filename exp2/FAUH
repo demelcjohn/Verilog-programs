@@ -1,0 +1,107 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55eb8f71da00 .scope module, "fulladderuhalf_tb" "fulladderuhalf_tb" 2 1;
+ .timescale 0 0;
+v0x55eb8f734690_0 .var "A", 0 0;
+v0x55eb8f734780_0 .var "B", 0 0;
+v0x55eb8f734890_0 .var "Cin", 0 0;
+v0x55eb8f734980_0 .net "Cout", 0 0, L_0x55eb8f734ef0;  1 drivers
+v0x55eb8f734a20_0 .net "S", 0 0, L_0x55eb8f734c90;  1 drivers
+S_0x55eb8f71db80 .scope module, "c" "fulladderuhalf" 2 6, 3 3 0, S_0x55eb8f71da00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /INPUT 1 "Cin"
+    .port_info 3 /OUTPUT 1 "S"
+    .port_info 4 /OUTPUT 1 "Cout"
+L_0x55eb8f734ef0 .functor OR 1, L_0x55eb8f734dd0, L_0x55eb8f734bd0, C4<0>, C4<0>;
+v0x55eb8f733fe0_0 .net "A", 0 0, v0x55eb8f734690_0;  1 drivers
+v0x55eb8f7340a0_0 .net "B", 0 0, v0x55eb8f734780_0;  1 drivers
+v0x55eb8f734170_0 .net "Cin", 0 0, v0x55eb8f734890_0;  1 drivers
+v0x55eb8f734270_0 .net "Cout", 0 0, L_0x55eb8f734ef0;  alias, 1 drivers
+v0x55eb8f734310_0 .net "S", 0 0, L_0x55eb8f734c90;  alias, 1 drivers
+v0x55eb8f734400_0 .net "out2", 0 0, L_0x55eb8f734dd0;  1 drivers
+v0x55eb8f7344d0_0 .net "outC", 0 0, L_0x55eb8f734bd0;  1 drivers
+v0x55eb8f7345a0_0 .net "outS", 0 0, L_0x55eb8f734b60;  1 drivers
+S_0x55eb8f6e60f0 .scope module, "ha1" "halfadder" 3 6, 4 1 0, S_0x55eb8f71db80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "S"
+    .port_info 3 /OUTPUT 1 "C"
+L_0x55eb8f734b60 .functor XOR 1, v0x55eb8f734690_0, v0x55eb8f734780_0, C4<0>, C4<0>;
+L_0x55eb8f734bd0 .functor AND 1, v0x55eb8f734690_0, v0x55eb8f734780_0, C4<1>, C4<1>;
+v0x55eb8f6e62c0_0 .net "A", 0 0, v0x55eb8f734690_0;  alias, 1 drivers
+v0x55eb8f7337d0_0 .net "B", 0 0, v0x55eb8f734780_0;  alias, 1 drivers
+v0x55eb8f733890_0 .net "C", 0 0, L_0x55eb8f734bd0;  alias, 1 drivers
+v0x55eb8f733930_0 .net "S", 0 0, L_0x55eb8f734b60;  alias, 1 drivers
+S_0x55eb8f733a70 .scope module, "ha2" "halfadder" 3 7, 4 1 0, S_0x55eb8f71db80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "S"
+    .port_info 3 /OUTPUT 1 "C"
+L_0x55eb8f734c90 .functor XOR 1, L_0x55eb8f734b60, v0x55eb8f734890_0, C4<0>, C4<0>;
+L_0x55eb8f734dd0 .functor AND 1, L_0x55eb8f734b60, v0x55eb8f734890_0, C4<1>, C4<1>;
+v0x55eb8f733c60_0 .net "A", 0 0, L_0x55eb8f734b60;  alias, 1 drivers
+v0x55eb8f733d00_0 .net "B", 0 0, v0x55eb8f734890_0;  alias, 1 drivers
+v0x55eb8f733da0_0 .net "C", 0 0, L_0x55eb8f734dd0;  alias, 1 drivers
+v0x55eb8f733e70_0 .net "S", 0 0, L_0x55eb8f734c90;  alias, 1 drivers
+    .scope S_0x55eb8f71da00;
+T_0 ;
+    %vpi_call 2 11 "$display", "Full Adder" {0 0 0};
+    %vpi_call 2 13 "$dumpfile", "fulladderuhalf.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55eb8f71da00 {0 0 0};
+    %vpi_call 2 15 "$monitor", "A = %b | B = %b | Cin = %b | S = %b | Cout = %b", v0x55eb8f734690_0, v0x55eb8f734780_0, v0x55eb8f734890_0, v0x55eb8f734a20_0, v0x55eb8f734980_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734690_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734780_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734780_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734780_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734690_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734780_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55eb8f734890_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call 2 41 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "fulladderuhalf_tb.v";
+    "fulladderuhalf.v";
+    "./halfadder.v";

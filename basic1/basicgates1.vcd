@@ -1,0 +1,50 @@
+$date
+	Wed Aug  3 17:21:17 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module basicgates1tb $end
+$var wire 1 ! o_out $end
+$var wire 1 " n_out $end
+$var wire 1 # a_out $end
+$var reg 1 $ t_x $end
+$var reg 1 % t_y $end
+$scope module my_mod1 $end
+$var wire 1 # out $end
+$var wire 1 $ x $end
+$var wire 1 % y $end
+$upscope $end
+$scope module my_mod2 $end
+$var wire 1 ! out $end
+$var wire 1 $ x $end
+$var wire 1 % y $end
+$upscope $end
+$scope module my_mod3 $end
+$var wire 1 " out $end
+$var wire 1 $ x $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+1"
+0!
+$end
+#5
+1!
+1%
+#10
+0"
+0%
+1$
+#15
+1#
+1%
+#20
