@@ -1,0 +1,55 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x1387041e0 .scope module, "notgate_behavioural_tb" "notgate_behavioural_tb" 2 1;
+ .timescale 0 0;
+v0x138714700_0 .var "a", 0 0;
+v0x1387147b0_0 .net "y", 0 0, v0x138714650_0;  1 drivers
+S_0x138704360 .scope module, "notgate" "notgate_behavioural" 2 5, 3 1 0, S_0x1387041e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+v0x1387045a0_0 .net "a", 0 0, v0x138714700_0;  1 drivers
+v0x138714650_0 .var "y", 0 0;
+E_0x138704550 .event edge, v0x138714650_0, v0x1387045a0_0;
+    .scope S_0x138704360;
+T_0 ;
+    %wait E_0x138704550;
+    %load/vec4 v0x1387045a0_0;
+    %pad/u 32;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_0.0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x138714650_0, 0, 1;
+    %jmp T_0.1;
+T_0.0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x138714650_0, 0, 1;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x1387041e0;
+T_1 ;
+    %vpi_call 2 8 "$monitor", "a = %b, y = %b", v0x138714700_0, v0x1387147b0_0 {0 0 0};
+    %vpi_call 2 9 "$dumpfile", "notgate_behavioural_rb.vcd" {0 0 0};
+    %vpi_call 2 10 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1387041e0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x138714700_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x138714700_0, 0, 1;
+    %delay 5, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "notgate_behavioural_tb.v";
+    "notgate_behavioural.v";
